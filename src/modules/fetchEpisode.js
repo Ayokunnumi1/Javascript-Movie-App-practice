@@ -1,7 +1,7 @@
 const movieEpisode = async () => {
-  const movieUrl = 'https://api.tvmaze.com/';
+  const movieUrl = 'https://api.tvmaze.com/shows/1/episodes';
   try {
-    const response = await fetch(`${movieUrl}shows/1/episodes`);
+    const response = await fetch(movieUrl);
     const data = await response.json();
     return data;
   } catch (error) {

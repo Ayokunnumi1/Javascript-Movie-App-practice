@@ -27,6 +27,14 @@ const movieDisplay = async () => {
 `; return elements;
     }).join('');
     movieContainer.insertAdjacentHTML('beforeend', movieDisplayElement);
+    const commentButton = document.querySelectorAll('.comment-button');
+    commentButton.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        console.log('clicked');
+        const buttonId = parseInt(e.target.dataset.index, 10);
+        console.log(buttonId);
+      });
+    });
     return movieDisplayElement;
   } catch (error) {
     return error;
