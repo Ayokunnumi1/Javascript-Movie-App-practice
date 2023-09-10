@@ -11,7 +11,7 @@ const movies = async () => {
       };
       return newObject;
     });
-    console.log(filterResponseObject);
+    // console.log(filterResponseObject);
     return filterResponseObject;
   } catch (error) {
     return error;
