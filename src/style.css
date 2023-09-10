@@ -44,14 +44,14 @@ main::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(./asset/img/home__bg.jpg);
+  background: url(./asset/zeeflix.jpg);
   opacity: 0.2;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  background: var(--bs-cyan);
+  background: var(--bs-red);
   border-bottom: 2px solid var(--bs-cyan);
   color: var(--bs-light);
   padding: 0.5rem;
@@ -66,7 +66,7 @@ header {
 }
 
 .logo {
-  background: url('./asset/img/logo.jpg') no-repeat;
+  background: url('./asset/logo.jpg') no-repeat;
   background-size: cover;
   width: 100px;
   height: 100px;
