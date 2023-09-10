@@ -1,4 +1,4 @@
-import movieEpisode from './fetchEpisode.js';
+import { movieEpisode } from './fetchEpisode.js';
 
 const movies = async () => {
   try {
