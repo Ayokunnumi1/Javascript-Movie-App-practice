@@ -1,6 +1,7 @@
-import { movieEpisode } from './fetchEpisode.js';
+import { movieEpisode, getmovieEpisodeDetails } from './fetchEpisode.js';
 
-const movies = async () => {
+// eslint-disable-next-line import/prefer-default-export
+export const movies = async () => {
   try {
     const response = await movieEpisode();
     const filterResponseObject = response.map((res) => {
@@ -18,4 +19,20 @@ const movies = async () => {
   }
 };
 
-export default movies;
+export const moviesDetails = async () => {
+  try {
+    const response = await getmovieEpisodeDetails();
+    // console.log(response)
+    const filterMovieDetails = {
+      id: response.id,
+      title: response.name,
+      image: response.image.medium,
+      description: response.summary,
+      rating: response.rating.average,
+    };
+    // console.log(filterMovieDetails);
+    return filterMovieDetails;
+  } catch (error) {
+    return error;
+  }
+};

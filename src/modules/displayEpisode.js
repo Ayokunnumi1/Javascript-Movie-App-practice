@@ -1,4 +1,5 @@
-import movies from './filterEpisode.js';
+import { movies, moviesDetails } from './filterEpisode.js';
+import displayPopUp from './popUp.js';
 
 const movieDisplay = async () => {
   try {
@@ -29,10 +30,17 @@ const movieDisplay = async () => {
     movieContainer.insertAdjacentHTML('beforeend', movieDisplayElement);
     const commentButton = document.querySelectorAll('.comment-button');
     commentButton.forEach((button) => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', async () => {
         console.log('clicked');
-        const buttonId = parseInt(e.target.dataset.index, 10);
-        console.log(buttonId);
+        // const buttonId = parseInt(e.target.dataset.index, 10);
+        // const popUpMovie = moviesDetails(buttonId);
+        try {
+          const display = await displayPopUp();
+          console.log(display);
+          return display;
+        } catch (error) {
+          return error;
+        }
       });
     });
     return movieDisplayElement;

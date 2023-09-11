@@ -9,11 +9,12 @@ export const movieEpisode = async () => {
   }
 };
 
-export const movieEpisodeDetails = async (id) => {
+export const getmovieEpisodeDetails = async () => {
   const movieDetailsUrl = 'https://api.tvmaze.com/';
   try {
-    const response = await fetch(`${movieDetailsUrl}episodes/${id}`);
+    const response = await fetch(`${movieDetailsUrl}episodes/1`);
     const data = response.json();
+    // console.log(data);
     return data;
   } catch (error) {
     return error;
